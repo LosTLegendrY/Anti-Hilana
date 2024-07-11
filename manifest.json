@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Anti-Hilana Protection",
+  "version": "1.69.420",
+  "description": "Hilana is bad, God is watching you",
+  "permissions": ["tabs", "webNavigation"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "incognito": "split",
+  "web_accessible_resources": [
+    {
+      "resources": ["music.html", "music.mp3"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
